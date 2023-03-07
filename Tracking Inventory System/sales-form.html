@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="icon" type="image/png" href="images/icons/gear.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Products Sale</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="home.html"><img alt="Logo" src="images/logo.png"
+                style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+                width="190" height="60" tabindex="25"></a>
+        <hr>
+    
+        <button class="dropdown-btn">Sale
+            <i class="fa fa-caret-down" tabindex="7"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="sales-form.html" tabindex="8">New sales</a>
+            <a href="sales-list.html" tabindex="9">Sales</a>
+        </div>
+        <a href="inventory.html" tabindex="10">Inventory</a>
+        <button class="dropdown-btn">Order
+            <i class="fa fa-caret-down" tabindex="11"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="request-form.html" tabindex="12">Order Request</a>
+            <a href="order-list.html" tabindex="13">Orders</a>
+        </div>
+        <a href="customers.html" tabindex="14">Customers</a>
+        <a href="products.html" tabindex="15">Products</a>
+        <a href="supplier.html" tabindex="16">Supplier</a>
+        <button class="dropdown-btn">Reports 
+            <i class="fa fa-caret-down" tabindex="17"></i></button>
+		<div class="dropdown-container">
+			<a href="sales-report.html" tabindex="18">Sales Report</a> 
+            <a href="inventory-report.html" tabindex="19">Inventory Report</a>
+			<a href="employee-report.html" tabindex="20">Employee Report</a>
+            <a href="saved-reports.html" tabindex="21">Saved Reports</a>
+		</div>
+        <button class="dropdown-btn">Employees 
+            <i class="fa fa-caret-down" tabindex="22"></i></button>
+        <div class="dropdown-container">
+            <a href="employees.html" tabindex="23">Employee List</a>
+            <a href="employee-activity.html" tabindex="24">Employee Activity</a>
+        </div>
+    </div>
+    <div class="search">
+        Hello! Admin <a href="index.html" tabindex="26"><i class="fa fa-fw fa-sign-out"></i>Log-Out </a>
+    </div><br>
+
+    <div class="main">
+        <h1>Products Sale</h1>
+        <ul class="breadcrumb">
+            <li><a href="home.html" tabindex="6">Home</a></li>
+            <li>Products Sale</li>
+        </ul>
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done">Product</li>
+            <li class="progtrckr-todo">Customer</li>
+            <li class="progtrckr-todo">Review</li>
+            <li class="progtrckr-todo">Payment</li>
+            <li class="progtrckr-todo">Receipt</li>
+        </ol>
+
+        <div class="d-flex" style="width: 100vw;">
+            <div>
+                <div class="find-product d-flex ai-center">
+                    <div>
+                        <span>UPC Code : </span>
+                        <input type="text" class="upc-input" placeholder="ex. upc000" style="width: 172px;" tabindex="1">
+                        <input type="button" value="Find" class="find-product-btn" tabindex="2">
+                    </div>
+                    <div class="d-buttons-400">
+                        <input type="reset" value="Clear" class="clear-btn" tabindex="3">
+                        <input type="submit" value="Next" class="next-btn" tabindex="4">
+                    </div>
+
+                </div>
+                <form class="sales-request d-flex" style="width: 1000px;">
+                <!-- <form class="sales-request d-flex" > -->
+                    <div>
+                        <div class="fieldset-container">                
+                            <!-- <fieldset>
+                            </fieldset> -->
+                        </div>
+                        <div class="fieldset-body"></div>
+                    </div>           
+                </form>
+                <span class="request-msg"></span>
+            </div>
+            <div style="margin-left:20px;">
+                <span class="question">
+                    <i class="fa fa-question-circle-o" aria-hidden="true" tabindex="5"></i>
+                </span>
+                <div class="help" >
+                    <p>- Please put 'UPC Code' in the input box and click 'Find'.</p>
+                    <p>- Adjust the quantity of the product.</p>
+                    <p>- Keep adding more 'UPC code' if you have more products to proceed with.</p>
+                    <p>- Once you are done adding all products, click the 'Next' button.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer style="position: absolute;">
+        <p>&copy; 2022 Emma's Small Engines</p>
+    </footer> -->
+
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/sales-form.js"></script>
+</body>
+
+</html>

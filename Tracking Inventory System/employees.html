@@ -1,0 +1,105 @@
+<!-- checked -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icons/gear.png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Employees</title>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="home.html"><img alt="Logo" src="images/logo.png"
+                style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+                width="190" height="60" tabindex="23"></a>
+        <hr>
+        <button class="dropdown-btn">Sale 
+            <i class="fa fa-caret-down" tabindex="5"></i></button>
+        <div class="dropdown-container">
+            <a href="sales-form.html" tabindex="6">New sales</a>
+            <a href="sales-list.html" tabindex="7">Sales</a>
+        </div>
+        <a href="inventory.html" tabindex="8">Inventory</a>
+        <button class="dropdown-btn">Order 
+            <i class="fa fa-caret-down" tabindex="9"></i></button>
+        <div class="dropdown-container">
+            <a href="request-form.html" tabindex="10">Order Request</a>
+            <a href="order-list.html" tabindex="11">Orders</a>
+        </div>
+        <a href="customers.html" tabindex="12">Customers</a>
+        <a href="products.html" tabindex="13">Products</a>
+        <a href="supplier.html" tabindex="14">Supplier</a>
+        <button class="dropdown-btn">Reports 
+            <i class="fa fa-caret-down" tabindex="15"></i></button>
+        <div class="dropdown-container">
+            <a href="sales-report.html" tabindex="16">Sales Report</a>
+            <a href="inventory-report.html" tabindex="17">Inventory Report</a>
+            <a href="employee-report.html" tabindex="18">Employee Report</a>
+            <a href="saved-reports.html" tabindex="19">Saved Reports</a>
+        </div>
+        <button class="dropdown-btn">Employees 
+            <i class="fa fa-caret-down" tabindex="20"></i></button>
+        <div class="dropdown-container">
+            <a href="employees.html" tabindex="21">Employee List</a>
+            <a href="employee-activity.html" tabindex="22">Employee Activity</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search">
+            Hello! Admin <a href="index.html" tabindex="24"><i class="fa fa-fw fa-sign-out"></i>Log-Out </a>
+        </div>
+        <main class="main">
+            <div>
+                <h1>Employees</h1>
+                <ul class="breadcrumb">
+                    <li><a href="home.html" tabindex="4">Home</a></li>
+                    <li>Employees</li>
+                </ul>
+                <a href="new-employee.html"
+                    style="color: #fff; background-color: green; margin-left: 40px; padding: 7px; border-radius: 8px;"
+                    tabindex="3">Add New Employee</a>
+                <div class="search-filter">
+                    <div class="tooltip">
+                        <span class="tooltiptext">Search by Firs Name, Last Name, Phone or Employee Code</span> <span
+                            class="delete-search"><input class="keyword" placeholder=" Search..." tabindex="1"
+                                type="text"> <span
+                                onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span></span>
+                    </div>
+                    <button class="btn-filter" tabindex="2">Submit</button>
+                </div>
+            </div>
+            <br>
+            <div class="msg"></div>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Department</th>
+                        <th>Phone</th>
+                        <th>Edit</th>
+                        <!-- <th>Select</th> -->
+                    </tr>
+                </thead>
+                <tbody id="employees-table"></tbody>
+            </table>
+            <div class="pagenumbers" id="pagination"></div>
+
+        </main>
+    </div>
+
+    <script src="scripts/app.js" type="module"></script>
+    <script src="scripts/employee.js" type="module"></script>
+</body>
+
+</html>

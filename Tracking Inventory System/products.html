@@ -1,0 +1,111 @@
+<!-- checked -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="icon" type="image/png" href="images/icons/gear.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Products</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+
+        <a href="home.html"><img alt="Logo" src="images/logo.png"
+                style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+                width="190" height="60" tabindex="22"></a>
+        <hr>
+
+        <button class="dropdown-btn">Sale
+            <i class="fa fa-caret-down" tabindex="4"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="sales-form.html" tabindex="5">New sales</a>
+            <a href="sales-list.html" tabindex="6">Sales</a>
+        </div>
+        <a href="inventory.html" tabindex="7">Inventory</a>
+        <button class="dropdown-btn">Order
+            <i class="fa fa-caret-down" tabindex="8"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="request-form.html" tabindex="9">Order Request</a>
+            <a href="order-list.html" tabindex="10">Orders</a>
+        </div>
+        <a href="customers.html" tabindex="11">Customers</a>
+        <a href="products.html" tabindex="12">Products</a>
+        <a href="supplier.html" tabindex="13">Supplier</a>
+        <button class="dropdown-btn">Reports 
+            <i class="fa fa-caret-down" tabindex="14"></i></button>
+		<div class="dropdown-container">
+			<a href="sales-report.html" tabindex="15">Sales Report</a> 
+            <a href="inventory-report.html" tabindex="16">Inventory Report</a>
+			<a href="employee-report.html" tabindex="17">Employee Report</a>
+            <a href="saved-reports.html" tabindex="18">Saved Reports</a>
+		</div>
+        <button class="dropdown-btn">Employees 
+            <i class="fa fa-caret-down" tabindex="19"></i></button>
+        <div class="dropdown-container">
+            <a href="employees.html" tabindex="20">Employee List</a>
+            <a href="employee-activity.html" tabindex="21">Employee Activity</a>
+        </div>  
+    </div>
+
+<div class="container">
+
+    <div class="search">
+        Hello! Admin <a href="index.html" tabindex="23"><i class="fa fa-fw fa-sign-out"></i>Log-Out </a>
+    </div><br>
+
+
+
+    <div class="main">
+        <h1>Products</h1>
+        <ul class="breadcrumb">
+            <li><a href="home.html" tabindex="3">Home</a></li>
+            <li>Products</li>
+        </ul>
+        <div class="search-filter">
+            <div class="tooltip">
+                <span class="tooltiptext">Search by UPC, Category, Item name, Supplier Code or Supplier Name</span>
+                <span class="delete-search">
+                    <input type="text" class="keyword" placeholder="   Search..."  tabindex="1">
+                    <span onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                </span>
+            </div>
+            <button class="btn-filter" tabindex="2">Submit</button>
+        </div>
+        <div class="msg"></div>
+        <table class ="content-table">
+            <thead>
+                <tr>
+                    <th>UPC Bar Code</th>
+                    <th>Category</th>
+                    <th>ItemName</th>
+                    <th>SupplierCode</th>
+                    <th>SupplierName</th>
+                    <th>Purchase</th>
+                </tr>
+            </thead>
+            <tbody id="products-table"></tbody>
+        </table>
+            <div class="pagenumbers" id="pagination"></div>
+    </div>
+</div>
+    <!-- <footer>
+        <p>&copy; 2022 Emma's Small Engines</p>
+    </footer> -->
+
+
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/products.js"></script>
+</body>
+
+</html>

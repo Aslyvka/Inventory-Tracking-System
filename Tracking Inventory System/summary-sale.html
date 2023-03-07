@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="icon" type="image/png" href="images/icons/gear.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Summary</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="home.html"><img alt="Logo" src="images/logo.png"
+                style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+                width="190" height="60" tabindex="25"></a>
+        <hr>
+    
+        <button class="dropdown-btn">Sale
+            <i class="fa fa-caret-down" tabindex="7"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="sales-form.html" tabindex="8">New sales</a>
+            <a href="sales-list.html" tabindex="9">Sales</a>
+        </div>
+        <a href="inventory.html" tabindex="10">Inventory</a>
+        <button class="dropdown-btn">Order
+            <i class="fa fa-caret-down" tabindex="11"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="request-form.html" tabindex="12">Order Request</a>
+            <a href="order-list.html" tabindex="13">Orders</a>
+        </div>
+        <a href="customers.html" tabindex="14">Customers</a>
+        <a href="products.html" tabindex="15">Products</a>
+        <a href="supplier.html" tabindex="16">Supplier</a>
+        <button class="dropdown-btn">Reports 
+            <i class="fa fa-caret-down" tabindex="17"></i></button>
+		<div class="dropdown-container">
+			<a href="sales-report.html" tabindex="18">Sales Report</a> 
+            <a href="inventory-report.html" tabindex="19">Inventory Report</a>
+			<a href="employee-report.html" tabindex="20">Employee Report</a>
+            <a href="saved-reports.html" tabindex="21">Saved Reports</a>
+		</div>
+        <button class="dropdown-btn">Employees 
+            <i class="fa fa-caret-down" tabindex="22"></i></button>
+        <div class="dropdown-container">
+            <a href="employees.html" tabindex="23">Employee List</a>
+            <a href="employee-activity.html" tabindex="24">Employee Activity</a>
+        </div>
+    </div>
+
+    <div class="search">
+        Hello! Admin <a href="index.html" tabindex="26"><i class="fa fa-fw fa-sign-out"></i>Log-Out </a>
+    </div><br>
+
+    <div class="main">
+        <h1>Summary</h1>
+        <ul class="breadcrumb">
+            <li><a href="home.html" tabindex="6">Home</a></li>
+            <li>Summary</li>
+        </ul>
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done">Product</li>
+            <li class="progtrckr-done">Customer</li>
+            <li class="progtrckr-done">Review</li>
+            <li class="progtrckr-todo">Payment</li>
+            <li class="progtrckr-todo">Receipt</li>
+        </ol>
+        
+        <div class="d-flex" style="width: 100vw;">
+            <div>
+                <div class="d-buttons-900">
+                    <input type="submit" value="Back" class="secondary back-btn" tabindex="3"
+                        >
+                    <input type="submit" value="Confirm" class="confirm-btn" tabindex="4" style="width: 140px;">
+                </div>
+                <form class="sales-summary d-flex gap-30"  >
+                    <fieldset >
+                        <div class="customer-info-container">
+                            <h3>Customer Information</h3>
+                            <div class="d-flex customer-info">
+                                <div>
+                                    <label for="firstName">First Name</label>
+                                    <input id="firstName" class="firstName" placeholder="First Name"  name="firstName" type="text"  required>                        
+                                </div>
+
+                                <div>
+                                    <label for="lName">Last Name</label>
+                                    <input  id="lName" class="lastName" placeholder="Last Name"  name="lName" type="text"  required> 
+                                </div>  
+
+                                <div>
+                                    <label for="phone">Phone</label>
+                                    <input id="phone" class="phone" placeholder="ex.111 111 1111"  name="phone" type="tel"  required>
+                                </div>
+
+                                <div>
+                                    <label for="email">Email</label>
+                                    <input id="email" class="email" placeholder="example@gmail.com"  name="email" type="email"  required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Purchased Items</h3>      
+                            <div class="product-summary-head"></div>
+                            <div class="products-container">
+                                <!-- <div class="d-flex purchased-item">
+                                    <input type="text" class="itemName" name="itemName" id="itemName" value="${p.itemName}" tabindex="" required disabled>
+                                    <input type="text" class="price" name="price" value="$ ${p.price}" id="price" tabindex="" style="width: 50px" required
+                                        disabled>
+                                    <input type="number" class="itemQuantity" name="itemQuantity" value="${p.salesQuantity}" id="itemQuantity"
+                                        style="width: 40px" min="1" tabindex="" required>
+                                    <input type="text" class="net" name="net" value="$ ${p.net}" id="net" tabindex="" style="width: 70px" required disabled>
+                                    <input type="text" class="tax" name="tax" value="$ ${p.tax}" id="tax" tabindex="" style="width: 60px" required disabled>
+                                    <input type="text" class="total" name="total" value="$ ${p.total}" id="total" tabindex="" style="width: 70px" required
+                                        disabled>
+                                </div> -->
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="summary-total">
+                        <p style="margin-left: 0px;">Net Total : $ <span class="net-total"></span></p>
+                        <p style="margin-left: 0px;">Tax Total : $ <span class="tax-total"></span></p>
+                        <hr>
+                        <p style="margin-left: 0px;">Total : $ <span class="amount-total"></span></p>
+                    </div>
+                </form>
+                <span class="request-msg"></span>
+            </div>
+            <div style="margin-left:20px;">
+                <span class="question" style="padding-bottom: 36px;">
+                    <i class="fa fa-question-circle-o" aria-hidden="true" tabindex="5"></i>
+                </span>
+                <div class="help" style="max-width: 250px;">
+                    <p>- Check the customer details if there are any.</p>
+                    <p>- Check the item details.</p>
+                    <p>- Modify quantity with quantity input field or 'REMOVE' button.</p>
+                    <p>- Click the 'Confirm' button to proceed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer style="position: absolute;">
+        <p>&copy; 2022 Emma's Small Engines</p>
+    </footer> -->
+
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/summary-sale.js"></script>
+</body>
+</html>

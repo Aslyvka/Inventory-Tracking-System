@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/png" href="images/icons/gear.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Payment</title>
+</head>
+
+<body>
+
+	<div class="sidenav">
+
+		<a href="home.html"><img alt="Logo" src="images/logo.png"
+				style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+				width="190" height="60"></a>
+		<hr>
+
+		<button class="dropdown-btn">Sale
+			<i class="fa fa-caret-down" tabindex="13"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="sales-form.html" tabindex="14">New sales</a>
+			<a href="sales-list.html" tabindex="15">Sales</a>
+		</div>
+		<a href="inventory.html" tabindex="16">Inventory</a>
+		<button class="dropdown-btn">Order
+			<i class="fa fa-caret-down" tabindex="17"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="request-form.html" tabindex="18">Order Request</a>
+			<a href="order-list.html" tabindex="19">Orders</a>
+		</div>
+		<a href="customers.html" tabindex="20">Customers</a>
+		<a href="products.html" tabindex="21">Products</a>
+		<a href="supplier.html" tabindex="22">Supplier</a>
+		<button class="dropdown-btn">Reports <i class="fa fa-caret-down" tabindex="24"></i></button>
+		<div class="dropdown-container">
+			<a href="sales-report.html" tabindex="25">Sales Report</a> 
+            <a href="inventory-report.html" tabindex="26">Inventory Report</a>
+			<a href="employee-report.html" tabindex="27">Employee Report</a>
+			<a href="saved-reports.html">Saved Reports</a>
+		</div>
+		<button class="dropdown-btn">Employees <i class="fa fa-caret-down" tabindex="24"></i></button>
+		<div class="dropdown-container">
+			<a href="employees.html" tabindex="25">Employee List</a>
+			<a href="employee-activity.html" tabindex="26">Employee Activity</a>
+		</div>
+	</div>
+
+	<div class="search">
+		Hello! Admin <a href="index.html"><i class="fa fa-fw fa-sign-out"></i>Log-Out </a>
+	</div><br>
+
+
+
+	<div class="main">
+		<h1>Payment</h1>
+		<ul class="breadcrumb">
+			<li><a href="home.html">Home</a></li>
+			<li>Payment</li>
+		</ul>
+		<ol class="progtrckr" data-progtrckr-steps="5" >
+			<li class="progtrckr-done">Product</li>
+			<li class="progtrckr-done">Customer</li>
+			<li class="progtrckr-done">Review</li>
+			<li class="progtrckr-done">Payment</li>
+			<li class="progtrckr-todo">Receipt</li>
+		</ol>
+
+		<div class="d-buttons-900">
+			<input type="submit" class="secondary back-btn" value="Back" tabindex="11">
+			<input type="submit" value="Pay Now" class="pay-btn" tabindex="12">
+		</div>
+		<form class="order-request" style="width: 60%; position: relative;">
+			<fieldset style="width: 47%;">
+				<div class="two-cols">
+					<div>
+						<label for="price">Item price</label>
+						<input type="text" class="price" name="price" placeholder="ex. $0.00" id="price" tabindex="1" required style="width: 100px;">
+					</div>
+					<div>
+						<label for="price">Tax</label>
+						<input type="text" class="tax" name="tax" placeholder="ex. $0.00" id="tax" tabindex="2" required style="width: 100px;">
+					</div>
+					<div>
+						<label for="price">Total</label>
+						<input type="text" class="total" name="total" placeholder="ex. $0.00" id="total" tabindex="3" required style="width: 100px; font-weight: bold; font-size: 20px;">
+					</div>
+				</div>
+
+				<div id="radio-pay">
+					<h3 style="margin-left: 30%;">Payment Type</h3>
+					<p style="margin-left: 20%;"><small>(Select applicable payment methods)</small></p>
+					<div>
+						<input type="checkbox" name="pay" value="Credit Card" id="creditcard" tabindex="1">
+						<label for="creditcard">Credit Card</label>
+						<input type="text" class="checkbox-amount credet-amount" placeholder="ex. $0.00"  tabindex="2">
+						<button class="open-button" id="credit-info" tabindex="3">+</button>
+
+						<img src="https://img.icons8.com/color/36/000000/visa.png"
+							style="border: none; margin-bottom: -13px; margin-left: 10px;" alt="visa card">
+						<img src="https://img.icons8.com/color/36/000000/mastercard.png"
+							style="border: none; margin-bottom: -13px;" alt="mastercard card">
+						<img src="https://img.icons8.com/color/36/000000/amex.png"
+							style="border: none; margin-bottom: -13px;" alt="amex card">
+						<span class="err-msg"></span>
+					</div>
+
+					<div>
+						<input type="checkbox" name="pay" value="Debit" id="debit" tabindex="4">
+						<label for="debit">Debit</label>
+						<input type="text" class="checkbox-amount debit-amount" placeholder="ex. $0.00"  tabindex="5">
+						<span class="err-msg"></span>
+					</div>
+					<div>
+						<input type="checkbox" name="pay" value="Cash" id="cash"  tabindex="6">
+						<label for="cash">Cash</label>
+						<input type="text" class="checkbox-amount cash-amount" placeholder="ex. $0.00" tabindex="7">
+						<span class="err-msg"></span>
+					</div>
+					<div class="tooltip">
+						<span class="tooltiptext tooltipdown">Gift Card, Cheque</span>
+						<input type="checkbox" name="pay" value="Other" id="other" tabindex="8">
+						<label for="other">Other</label>
+						<input type="text" class="checkbox-amount other-amount" placeholder="ex. $0.00"  tabindex="9">
+						<button class="open-button1" id="other-info" style="margin-left: 10px;" tabindex="10">+</button>
+						<span class="err-msg"></span>
+					</div>
+
+				</div>
+				<br>
+				<hr>
+				<div class="pay-breakdown">
+					<p>Paid : <span class="paid-amount" style="color: green;"></span></p>
+					<p>Balance : <span class="balance-amount" style="color: #b6432e;"></span></p>
+				</div>
+
+				
+
+				<p class="request-msg" style="margin-left: 0;"></p>
+				<div>
+					<input type="submit" value="Back To Main Page" class="back-to-main-btn outline-secondary">
+					<input type="submit" value="Print Receipt" class="receipt-btn outline">
+				</div>
+			</fieldset>
+
+			<fieldset class="form-popup" id="myForm">
+				<div class="form-container">
+					<h3>Credit Card Info</h3>
+					<div class="credit-card-x" style="position: absolute; top:30px; right:30px; cursor: pointer;">X</div>
+					<div>
+						<label for="fName" style="font-size: 14px;">Customer's Full Name</label>
+						<input type="text" id="fName" name="fName" placeholder="Full Name" required>
+					</div>
+					<div>
+						<label for="ccnum" style="font-size: 14px;">Card number</label>
+						<input type="text" id="ccnum" name="cardnumber" placeholder="ex 1111-1111-1111-1111" required>
+						<span class="err-msg credit-num-msg"></span>
+					</div>
+					<div class="d-flex">
+						<div style="min-width: 80px;">
+							<label for="expmonth" style="font-size: 14px;">Month</label>
+							<input type="text" style="width: 50px;" id="expmonth" name="expmonth" placeholder="ex 01" required>
+						</div>
+						<div style="min-width: 80px;">
+							<label for="expyear" style="font-size: 14px;">Year</label>
+							<input type="text" style="width: 60px;" id="expyear" name="expyear" placeholder="ex 2024" required>
+						</div>
+						<div style="min-width: 80px;">
+							<label for="cvv" style="font-size: 14px;">CVV</label>
+							<input type="text" style="width: 50px;" id="cvv" name="cvv" placeholder="ex 111" required>
+						</div>
+					</div>
+					<span class="err-msg credit-expiry-msg"></span>
+					<input type="button" class="secondary clear-credit-info" value="Clear" style="padding: 8px 16px; width: max-content; height: max-content; margin-left: 220px;">
+				</div>
+			</fieldset>
+
+			<fieldset class="form-popup1" id="myForm1">
+				<div class="form-container">
+					<h3>Other Payment Info</h3>
+					<div class="other-info-x" style="position: absolute; top:30px; right:30px; cursor: pointer;">X</div>
+					<div>
+						<label for="addDetails">Additional Details:</label>
+						<textarea id="addDetails" name="addDetails" style="margin-left: 7px; width: 250px; height: 80px; display: block;"
+						tabindex="9"></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	<script type="module" src="scripts/app.js"></script>
+	<script type="module" src="scripts/pay-sale.js"></script>
+	</div>
+</body>
+
+</html>

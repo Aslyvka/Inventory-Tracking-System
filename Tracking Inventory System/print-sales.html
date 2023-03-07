@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/icons/report.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sales Report</title>
+</head>
+
+<body style="background-color: white;">
+
+
+    <div class="invoice-box" style="margin-left: 0px; font-size: 18px;  box-shadow: none;">
+
+
+        <table>
+            <tr class="top">
+                <td class="report-title">Sales Report</td>
+            </tr>
+            <table>
+                <tr class="period">
+                    <td>Period : <span class="start">2022-09-11</span> - <span class="end">2022-09-17</span></td>
+                </tr>
+                <tr class="create-date">
+                    <td>Reporting Date: <span class="today">2022-12-08</span></td>
+                </tr>
+            </table>
+        </table>
+
+        <div class="report-container">
+            <h3 class="title">Sales by Invoice</h3>
+            <table class ="by-invoice" cellpadding="0" cellspacing="0">   
+                <tr class="heading items-list">
+                    <td>Invoice #</td>
+                    <td>Qty</td>
+                    <td>Amuont</td>
+                </tr>
+            
+                <tr class="item">
+                    <td>IV011</td>
+                    <td>3</td>
+                    <td>$40</td>
+                </tr>
+
+                <tr class="item">
+                    <td>IV012</td>
+                    <td>4</td>
+                    <td>$48.5</td>
+                </tr>
+
+                <tr class="item">
+                    <td>IV013</td>
+                    <td>5</td>
+                    <td>$60</td>
+                </tr>
+
+                <tr class="item">
+                    <td>IV014</td>
+                    <td>1</td>
+                    <td>$50</td>
+                </tr>
+
+                <tr class="item">
+                    <td>IV015</td>
+                    <td>20</td>
+                    <td>$200</td>
+                </tr>
+
+                <tr class="item">
+                    <td>IV016</td>
+                    <td>10</td>
+                    <td>$100</td>
+                </tr>
+
+                <tr class="item.last">
+                    <td>IV017</td>
+                    <td>25</td>
+                    <td>$171.5</td>
+                </tr> 
+
+                <tr class="total">
+                    <td>Sub Total: </td>
+                    <td>73</td>
+                    <td class="net">$670</td>
+                </tr>
+
+                <tr class="item">
+                    <td></td>
+                    <td>Tax</td>
+                    <td class="tax">$87.1</td>
+                </tr>
+
+                <tr class="item">
+                    <td></td>
+                    <td>Discount</td>
+                    <td> %</td>
+                </tr>
+
+                <tr class="total">
+                    <td>Total: </td>
+                    <td></td>
+                    <td class="total-amount">$757.1</td>
+                </tr>
+            </table>
+
+            
+            <h3 class="title">Sales by Item</h3>
+            <table class ="by-itemname" cellpadding="0" cellspacing="0">   
+                <tr class="heading items-list">
+                    <td>Category</td>
+                    <td>ItemName</td>
+                    <td>UnitPrice</td>
+                    <td>Qty</td>
+                    <td>Amuont</td>
+                </tr>
+            
+                <tr class="item">
+                    <td>Battery</td>
+                    <td>AscendTX</td>
+                    <td>$10</td>
+                    <td>10</td>
+                    <td>$100</td>
+                </tr>
+
+                <tr class="item">
+                    <td>Blade</td>
+                    <td>Blade Razor</td>
+                    <td>$7</td>
+                    <td>2</td>
+                    <td>$14</td>
+                </tr> 
+                
+                <tr class="item">
+                    <td>Chain</td>
+                    <td>Kinetica Chaine 255</td>
+                    <td>$5</td>
+                    <td>10</td>
+                    <td>$50</td>
+                </tr> 
+                
+                <tr class="item">
+                    <td>Gas</td>
+                    <td>Enforce Oil 111</td>
+                    <td>$10</td>
+                    <td>50</td>
+                    <td>$500</td>
+                </tr>
+
+                <tr class="item.last">
+                    <td>Recoil</td>
+                    <td>Allocate Recoil</td>
+                    <td>$6</td>
+                    <td>1</td>
+                    <td>$6</td>
+                </tr> 
+
+                <tr class="total">
+                    <td>Sub Total: </td>
+                    <td></td>
+                    <td></td>
+                    <td>73</td>
+                    <td class="net">$670</td>
+                </tr>
+
+                <tr class="item">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Tax</td>
+                    <td class="tax">$87.1</td>
+                </tr>
+
+                <tr class="item">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Discount</td>
+                    <td> %</td>
+                </tr>
+
+                <tr class="total">
+                    <td>Total: </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="total-amount">$757.1</td>
+                </tr>
+            </table>
+
+            
+            <h3 class="title">Sales by Employee</h3>
+            <table class ="by-employee" cellpadding="0" cellspacing="0">   
+                <tr class="heading items-list">
+                    <td>Name</td>
+                    <td>Qty</td>
+                    <td>Amuont</td>
+                </tr>
+                
+                <tr class="item">
+                    <td>wtutty</td>
+                    <td>40</td>
+                    <td>$470</td>
+                </tr>
+
+                <tr class="item.last">
+                    <td>wdickey</td>
+                    <td>33</td>
+                    <td>$200</td>
+                </tr> 
+
+                <tr class="total">
+                    <td>Sub Total: </td>
+                    <td>73</td>
+                    <td class="net">$670</td>
+                </tr>
+
+                <tr class="item">
+                    <td></td>
+                    <td>Tax</td>
+                    <td class="tax">$87.1</td>
+                </tr>
+
+                <tr class="total">
+                    <td>Total: </td>
+                    <td></td>
+                    <td class="total-amount">$757.1</td>
+                </tr>
+            </table>
+
+            
+            <h3 class="title">Sales by Payment</h3>
+            <table class ="by-payment" cellpadding="0" cellspacing="0">   
+                <tr class="heading items-list">
+                    <td>Payment</td>
+                    <td>Qty</td>
+                    <td>Amuont</td>
+                </tr>
+                
+                <tr class="item">
+                    <td>credit</td>
+                    <td>30</td>
+                    <td>$370</td>
+                </tr>
+
+                <tr class="item">
+                    <td>debit</td>
+                    <td>10</td>
+                    <td>$100</td>
+                </tr>
+
+                <tr class="item.last">
+                    <td>cash</td>
+                    <td>33</td>
+                    <td>$200</td>
+                </tr> 
+
+                <tr class="total">
+                    <td>Sub Total: </td>
+                    <td>73</td>
+                    <td class="net">$670</td>
+                </tr>
+
+                <tr class="item">
+                    <td></td>
+                    <td>Tax</td>
+                    <td class="tax">$87.1</td>
+                </tr>
+
+                <tr class="total">
+                    <td>Total: </td>
+                    <td></td>
+                    <td class="total-amount">$757.1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+        <script type="module" src="scripts/app.js"></script>
+        <script type="module" src="scripts/sales-report.js"></script>
+</body>
+
+</html>

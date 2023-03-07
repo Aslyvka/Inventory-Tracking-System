@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/report.png" />
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Inventory Report</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+    
+        <a href="home.html"><img alt="Logo" src="images/logo.png"
+                style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+                width="190" height="60" tabindex="24"></a>
+        <hr>
+    
+        <button class="dropdown-btn">Sale
+            <i class="fa fa-caret-down" tabindex="6"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="sales-form.html" tabindex="7">New sales</a>
+            <a href="sales-list.html" tabindex="8">Sales</a>
+        </div>
+        <a href="inventory.html" tabindex="9">Inventory</a>
+        <button class="dropdown-btn">Order
+            <i class="fa fa-caret-down" tabindex="10"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="request-form.html" tabindex="11">Order Request</a>
+            <a href="order-list.html" tabindex="12">Orders</a>
+        </div>
+        <a href="customers.html" tabindex="13">Customers</a>
+        <a href="products.html" tabindex="14">Products</a>
+        <a href="supplier.html" tabindex="15">Supplier</a>
+        <button class="dropdown-btn">Reports
+            <i class="fa fa-caret-down" tabindex="16"></i></button>
+        <div class="dropdown-container">
+            <a href="sales-report.html" tabindex="17">Sales Report</a>
+            <a href="inventory-report.html" tabindex="18">Inventory Report</a>
+            <a href="employee-report.html" tabindex="19">Employee Report</a>
+            <a href="saved-reports.html" tabindex="20">Saved Reports</a>
+        </div>
+        <button class="dropdown-btn">Employees
+            <i class="fa fa-caret-down" tabindex="21"></i></button>
+        <div class="dropdown-container">
+            <a href="employees.html" tabindex="22">Employee List</a>
+            <a href="employee-activity.html" tabindex="23">Employee Activity</a>
+        </div>
+    </div>
+    
+    </div>
+    <div class="search">
+        Hello! Admin <a href="index.html" tabindex="5"><i class="fa fa-fw fa-sign-out"></i>Log-Out </a>
+    </div><br>
+
+    <div class="main">
+        <h1>Inventory Report</h1>
+        <ul class="breadcrumb">
+            <li><a href="home.html" tabindex="23">Home</a></li>
+            <li>Inventory Report</li>
+        </ul>
+        <div class="report-filter">
+            <div class="report-generate-option">
+                <span>Select report:</span>
+                <select class="inventory-report-options" tabindex="1">
+                    <option value="none">--select report type--</option>
+                    <option value="details">Inventory Movement Details</option>
+                    <option value="inventory-item">Inventory by item</option>
+                    <option value="inventory-status">Inventory by status</option>
+                </select>
+            </div>
+            <div class="date-range d-flex gap-10" style="align-items: center;">
+                <div>
+                    <span>Period:</span>
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">Start Date</span>
+                    <input type="date" id="date-start" class="date-start" tabindex="2">
+                </div>
+                <div class="tooltip">
+                    <span class="tooltiptext">End Date</span>
+                    <input type="date" id="date-end" class="date-end" tabindex="3">
+                </div>
+            </div>
+            <button class="btn-filter view-report" tabindex="4">View Report</button>
+        </div>
+        
+        <div>
+            <p class="msg" style="color: tomato;"></p>
+        </div>
+        
+        <div class="d-flex report-data" style="display: none; position:relative;">
+            <div class="report-box">
+                <table>
+                    <tr class="top">
+                        <td class="report-title">Inventory Report</td>
+                    </tr>
+                    <table>
+                        <tr class="period">
+                            <td class="period">Period : 2022.09.11 - 2022.09.17</td>
+                        </tr>
+                        <tr class="create-date">
+                            <td>Reporting Date: <span class="today">2022.10.01</span></td>
+                        </tr>
+                    </table>
+                </table>
+        
+                <div class="report-container">
+                    <!-- <h3 class="title">Inventory Movement Details</h3>
+                            <table class ="inventory-movement" cellpadding="0" cellspacing="0">   
+                                <tr class="heading items-list">
+                                    <td>Item Name</td>
+                                    <td class ="inventory-report-colspan" colspan="4">Qty</td>
+                                    <td>Price</td>
+                                    <td>Value</td>
+                                </tr>
+            
+                                <tr class="heading items-list">
+                                    <td></td>
+                                    <td>Begin</td>
+                                    <td>In</td>
+                                    <td>Out</td>
+                                    <td>Current</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr class="item">
+                                    <td>Ascend TX</td>
+                                    <td>8</td>
+                                    <td>10</td>
+                                    <td>10</td>
+                                    <td>8</td>
+                                    <td>$10</td>
+                                    <td>$80</td>
+                                </tr>
+            
+                                <tr class="item">
+                                    <td>Blade Razor</td>
+                                    <td>6</td>
+                                    <td>10</td>
+                                    <td>10</td>
+                                    <td>16</td>
+                                    <td>&7</td>
+                                    <td>$112</td>
+                                </tr>
+            
+                                <tr class="item">
+                                    <td>HPL Blade</td>
+                                    <td>0</td>
+                                    <td>20</td>
+                                    <td>16</td>
+                                    <td>4</td>
+                                    <td>$20</td>
+                                    <td>$80</td>
+                                </tr>
+            
+                                <tr class="item">
+                                    <td>Kinetica Chaine 255</td>
+                                    <td>6</td>
+                                    <td>20</td>
+                                    <td>10</td>
+                                    <td>16</td>
+                                    <td>$5</td>
+                                    <td>$80</td>
+                                </tr>
+            
+                                <tr class="item">
+                                    <td>Enforce Oil 111</td>
+                                    <td>60</td>
+                                    <td></td>
+                                    <td>50</td>
+                                    <td>10</td>
+                                    <td>$10</td>
+                                    <td>$100</td>
+                                </tr>
+            
+                                <tr class="item.last">
+                                    <td>Source Tire 123</td>
+                                    <td>8</td>
+                                    <td>20</td>
+                                    <td></td>
+                                    <td>28</td>
+                                    <td>$38</td>
+                                    <td>$1,064</td>
+                                </tr> 
+            
+                                <tr class="total">
+                                    <td>Total: </td>
+                                    <td>350</td>
+                                    <td>80</td>
+                                    <td>96</td>
+                                    <td>334</td>
+                                    <td></td>
+                                    <td class="total-amount">$757.1</td>
+                                </tr>
+            
+                            </table>
+        
+                            <h3 class="title">Inventory by Item</h3>
+                            <table class ="by-itemname" cellpadding="0" cellspacing="0">   
+                                <tr class="heading items-list">
+                                    <td>Category</td>
+                                    <td>ItemName</td>
+                                    <td>UnitPrice</td>
+                                    <td>Qty</td>
+                                    <td>Amuont</td>
+                                </tr>
+                            
+                                <tr class="item">
+                                    <td>Battery</td>
+                                    <td>AscendTX</td>
+                                    <td>$10</td>
+                                    <td>10</td>
+                                    <td>$100</td>
+                                </tr>
+            
+                                <tr class="item">
+                                    <td>Blade</td>
+                                    <td>Blade Razor</td>
+                                    <td>$7</td>
+                                    <td>2</td>
+                                    <td>$14</td>
+                                </tr> 
+                                
+                                <tr class="item">
+                                    <td>Chain</td>
+                                    <td>Kinetica Chaine 255</td>
+                                    <td>$5</td>
+                                    <td>10</td>
+                                    <td>$50</td>
+                                </tr> 
+                                
+                                <tr class="item">
+                                    <td>Gas</td>
+                                    <td>Enforce Oil 111</td>
+                                    <td>$10</td>
+                                    <td>50</td>
+                                    <td>$500</td>
+                                </tr>
+            
+                                <tr class="item.last">
+                                    <td>Recoil</td>
+                                    <td>Allocate Recoil</td>
+                                    <td>$6</td>
+                                    <td>1</td>
+                                    <td>$6</td>
+                                </tr> 
+            
+                                <tr class="total">
+                                    <td>Total: </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>334</td>
+                                    <td class="total-amount">$757.1</td>
+                                </tr>
+                            </table>
+        
+                            <h3 class="title">Inventory by Status</h3>
+                            <table class ="by-status" cellpadding="0" cellspacing="0">   
+                                <tr class="heading items-list">
+                                    <td>Status</td>
+                                    <td>Qty</td>
+                                    <td>Amuont</td>
+                                </tr>
+                                
+                                <tr class="item">
+                                    <td>Current</td>
+                                    <td>105</td>
+                                    <td>$5,500</td>
+                                </tr>
+                
+                                <tr class="item.last">
+                                    <td>Discontinued</td>
+                                    <td>30</td>
+                                    <td>$180</td>
+                                </tr> 
+                
+                                <tr class="total">
+                                    <td>Total: </td>
+                                    <td>334</td>
+                                    <td class="total-amount">$5,680</td>
+                                </tr>
+                            </table> -->
+                </div>
+            </div>
+        
+            <div class="report-btns d-flex flex-column">
+                <div>
+                    <input class="secondary back-home-btn" type="button" value="Back To Home" tabindex="3" style="width: 150px; background-color: transparent;">
+                    <input class="outline download-btn" type="button" value="Download" tabindex="2" style="width: 150px; border-color: green; color: green;">
+                </div>
+                <div>
+                    <input class="print-btn outline-secondary-print" type="button" value="Print" tabindex="1" style="width: 150px;">
+                    <input class="save-btn" type="button" value="Save" tabindex="1" style="width: 150px;">
+                </div>
+                <p class="print-msg" style="margin-left:10px; text-align: left;"></p>
+            </div>
+        </div>
+    </div>
+        
+    <!-- <footer style="position: absolute;">
+            <p>&copy; 2022 Emma's Small Engines</p>
+        </footer> -->
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/inventory-report.js"></script>
+</body>
+</html>

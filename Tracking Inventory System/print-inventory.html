@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/icons/report.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Inventory Report</title>
+</head>
+
+<body style="background-color: white;">
+    <div class="invoice-box" style="margin-left: 0px; font-size: 18px;  box-shadow: none;">
+
+    <table>
+        <tr class="top">
+            <td class="report-title">Inventory Report</td>
+        </tr>
+        <table>
+            <tr class="period">
+                <td class="period">Period : 2022-09-11 - 2022-09-17</td>
+            </tr>
+            <tr class="create-date">
+                <td>Reporting Date: <span class="today">2022-12-08</span></td>
+            </tr>
+        </table>
+    </table>
+
+    <div class="report-container">
+        <h3 class="title">Inventory Movement Details</h3>
+        <table class ="inventory-movement" cellpadding="0" cellspacing="0">   
+            <tr class="heading items-list">
+                <td>Item Name</td>
+                <td class ="inventory-report-colspan" colspan="4">Qty</td>
+                <td>Price</td>
+                <td>Value</td>
+            </tr>
+
+            <tr class="heading items-list">
+                <td></td>
+                <td>Begin</td>
+                <td>In</td>
+                <td>Out</td>
+                <td>Current</td>
+                <td></td>
+                <td></td>
+            </tr>
+        
+            <tr class="item">
+                <td>Ascend TX</td>
+                <td>8</td>
+                <td>10</td>
+                <td>10</td>
+                <td>8</td>
+                <td>$10</td>
+                <td>$80</td>
+            </tr>
+
+            <tr class="item">
+                <td>Blade Razor</td>
+                <td>6</td>
+                <td>10</td>
+                <td>10</td>
+                <td>16</td>
+                <td>&7</td>
+                <td>$112</td>
+            </tr>
+
+            <tr class="item">
+                <td>HPL Blade</td>
+                <td>0</td>
+                <td>20</td>
+                <td>16</td>
+                <td>4</td>
+                <td>$20</td>
+                <td>$80</td>
+            </tr>
+
+            <tr class="item">
+                <td>Kinetica Chaine 255</td>
+                <td>6</td>
+                <td>20</td>
+                <td>10</td>
+                <td>16</td>
+                <td>$5</td>
+                <td>$80</td>
+            </tr>
+
+            <tr class="item">
+                <td>Enforce Oil 111</td>
+                <td>60</td>
+                <td></td>
+                <td>50</td>
+                <td>10</td>
+                <td>$10</td>
+                <td>$100</td>
+            </tr>
+
+            <tr class="item.last">
+                <td>Source Tire 123</td>
+                <td>8</td>
+                <td>20</td>
+                <td></td>
+                <td>28</td>
+                <td>$38</td>
+                <td>$1,064</td>
+            </tr> 
+
+            <tr class="total">
+                <td>Total: </td>
+                <td>350</td>
+                <td>80</td>
+                <td>96</td>
+                <td>334</td>
+                <td></td>
+                <td class="total-amount">$757.1</td>
+            </tr>
+
+        </table>
+
+        <h3 class="title">Inventory by Item</h3>
+        <table class ="by-itemname" cellpadding="0" cellspacing="0">   
+            <tr class="heading items-list">
+                <td>Category</td>
+                <td>ItemName</td>
+                <td>UnitPrice</td>
+                <td>Qty</td>
+                <td>Amuont</td>
+            </tr>
+        
+            <tr class="item">
+                <td>Battery</td>
+                <td>AscendTX</td>
+                <td>$10</td>
+                <td>10</td>
+                <td>$100</td>
+            </tr>
+
+            <tr class="item">
+                <td>Blade</td>
+                <td>Blade Razor</td>
+                <td>$7</td>
+                <td>2</td>
+                <td>$14</td>
+            </tr> 
+            
+            <tr class="item">
+                <td>Chain</td>
+                <td>Kinetica Chaine 255</td>
+                <td>$5</td>
+                <td>10</td>
+                <td>$50</td>
+            </tr> 
+            
+            <tr class="item">
+                <td>Gas</td>
+                <td>Enforce Oil 111</td>
+                <td>$10</td>
+                <td>50</td>
+                <td>$500</td>
+            </tr>
+
+            <tr class="item.last">
+                <td>Recoil</td>
+                <td>Allocate Recoil</td>
+                <td>$6</td>
+                <td>1</td>
+                <td>$6</td>
+            </tr> 
+
+            <tr class="total">
+                <td>Total: </td>
+                <td></td>
+                <td></td>
+                <td>334</td>
+                <td class="total-amount">$757.1</td>
+            </tr>
+        </table>
+
+        <h3 class="title">Inventory by Status</h3>
+        <table class ="by-status" cellpadding="0" cellspacing="0">   
+            <tr class="heading items-list">
+                <td>Status</td>
+                <td>Qty</td>
+                <td>Amuont</td>
+            </tr>
+            
+            <tr class="item">
+                <td>Current</td>
+                <td>105</td>
+                <td>$5,500</td>
+            </tr>
+
+            <tr class="item.last">
+                <td>Discontinued</td>
+                <td>30</td>
+                <td>$180</td>
+            </tr> 
+
+            <tr class="total">
+                <td>Total: </td>
+                <td>334</td>
+                <td class="total-amount">$5,680</td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/inventory-report.js"></script>
+</body>
+
+</html>

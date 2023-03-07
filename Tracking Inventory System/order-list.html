@@ -1,0 +1,221 @@
+<!-- checked -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="icon" type="image/png" href="images/icons/gear.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Orders</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="home.html"><img alt="Logo" src="images/logo.png"
+                style="border-radius: 0%; margin-left:-17px; margin-top: 13px; margin-bottom: -8px; border-color: #306633;"
+                width="190" height="60" tabindex="28"></a>
+        <hr>
+
+        <button class="dropdown-btn">Sale
+            <i class="fa fa-caret-down" tabindex="10"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="sales-form.html" tabindex="11">New sales</a>
+            <a href="sales-list.html" tabindex="12">Sales</a>
+        </div>
+        <a href="inventory.html" tabindex="13">Inventory</a>
+        <button class="dropdown-btn">Order
+            <i class="fa fa-caret-down" tabindex="14"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="request-form.html" tabindex="15">Order Request</a>
+            <a href="order-list.html" tabindex="16">Orders</a>
+        </div>
+        <a href="customers.html" tabindex="17">Customers</a>
+        <a href="products.html" tabindex="18">Products</a>
+        <a href="supplier.html" tabindex="19">Supplier</a>
+        <button class="dropdown-btn">Reports 
+            <i class="fa fa-caret-down" tabindex="20"></i></button>
+		<div class="dropdown-container">
+			<a href="sales-report.html" tabindex="21">Sales Report</a> 
+            <a href="inventory-report.html" tabindex="22">Inventory Report</a>
+			<a href="employee-report.html" tabindex="23">Employee Report</a>
+            <a href="saved-reports.html" tabindex="24">Saved Reports</a>
+		</div>
+        <button class="dropdown-btn">Employees 
+            <i class="fa fa-caret-down" tabindex="25"></i></button>
+        <div class="dropdown-container">
+            <a href="employees.html" tabindex="26">Employee List</a>
+            <a href="employee-activity.html" tabindex="27">Employee Activity</a>
+        </div>
+    </div>
+
+    <div class="container">
+    <div class="search">
+        Hello! Admin <a href="index.html"><i class="fa fa-fw fa-sign-out" tabindex="29"></i>Log-Out </a>
+    </div><br>
+
+
+    <main class="main">
+        <h1>Orders</h1>
+        <ul class="breadcrumb">
+            <li><a href="home.html" tabindex="9">Home</a></li>
+            <li>Orders</li>
+        </ul>
+        <div class="search-filter">
+            <div class="tooltip">
+                <span class="tooltiptext">Search by UPC, Order Number, Item name or Supplier Code</span>
+                <span class="delete-search">
+                    <input type="text" class="keyword" placeholder="   Search..." tabindex="1">
+                    <span onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+                </span>
+            </div>
+            <div class="tooltip">
+                <span class="tooltiptext">Start Date</span>
+                <input type="date" class="date-start" tabindex="2">
+            </div>
+            <div class="tooltip">
+                <span class="tooltiptext">End Date</span>
+                <input type="date" class="date-end" tabindex="3">
+            </div>
+            <button class="btn-filter" tabindex="4">Submit</button>
+        </div>
+        <div class="radio-filter">
+            <input type="radio" name="orderlist-radio" id="requested" value="requested" checked tabindex="5">
+            <label for="requested">Requested</label>
+            <input type="radio" name="orderlist-radio" id="ordered" value="ordered" tabindex="6">
+            <label for="ordered">Ordered</label>
+            <input type="radio" name="orderlist-radio" id="arrived" value="arrived" tabindex="7">
+            <label for="arrived">Arrived</label>
+            <input type="radio" name="orderlist-radio" id="all" value="all" tabindex="8">
+            <label for="all">All</label>
+        </div><br>
+
+        <div class="msg"></div>
+        <table class="content-table order-table">
+            <thead>
+                <tr>
+                    <!-- <th><button class="order-date">Order Date</button></th> -->
+                    <th>UPC</th>
+                    <th>Requested Date<i class="fa fa-caret-up sort-request"></i></th>
+                    <th>Order Date <i class="fa fa-caret-up sort-order"></i></th>
+                    <th>Received Date <i class="fa fa-caret-up sort-receive"></i></th>
+                    <th>Order Number</th>
+                    <th>Item Name</th>
+                    <th>Supplier Code</th>
+                    <th>Status</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Net</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody id="order-table">
+                <!-- <tr>
+                    <td>OD1233</td>
+                    <td>2022-09-8</td>
+                    <td>2022-09-10</td>
+                    <td>UPC061</td>
+                    <td>Enforce Oil 111</td>
+                    <td>S010</td>
+                    <td>Arrived</td>
+                    <td>20</td>
+                    <td>$10.00</td>
+                    <td>$200.00</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div class="pagenumbers" id="pagination"></div>
+        <div class="edit-modal">
+            <div class="edit-modal-content">
+                <h2>Edit Order Infomation</h2>
+                <div class="x">X</div>
+                <div class="edit-info">
+                    <!-- <div class="d-flex">
+                        <div class="flex-1">
+                            <div class="d-flex ai-center">
+                                <label for="upc" >UPC Code</label>
+                                <p>UPC123</p>
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="requested-date">Requested Date</label>
+                                <p>2022-02-02</p>
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="order-date">Order Date</label>
+                                <input type="date" id="order-date">
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="received-date">Received Date</label>
+                                <input type="date" id="received-date">
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="order-number">Order Number</label>
+                                <p>OD1234</p>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="d-flex ai-center">
+                                <label for="name">Item Name</label>
+                                <p>Cube Battery</p>
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="supplier">Supplier Code</label>
+                                <p>S2</p>
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="orderStatus">Status</label>
+                                <select name="orderStatus" id="orderStatus" tabindex="1">
+                                    <option value="Requested">Requested</option>
+                                    <option value="Ordered">Ordered</option>
+                                    <option value="Arrived">Arrived</option>
+                                </select>
+                            </div>
+                            <div class="d-flex ai-center">
+                                <label for="quantity">Quantity</label>
+                                <input type="text" id="quantity">
+                            </div>
+                            <span style="color:tomato; font-size: 15px; margin-left: 12px;">hey</span>
+                            <div class="d-flex ai-center">
+                                <label for="price">Original Price</label>
+                                <input type="text" id="price">
+                            </div>
+                            <span style="color:tomato; font-size: 15px; margin-left: 12px;">hey</span>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="d-flex jc-center mt-5">
+                    <button class="modal-close">CANCEL</button>
+                    <button class="modal-save">SAVE</button>
+                </div>
+
+                <div class="modal-process">
+                    <div class="modal-message">Item received successfully. <br>Do you want to go to Inventory
+                        page?</div>
+                    <br>
+                    <button class="modal-stay-current">&gt;&gt; Stay on Current Page</button>
+                    <button class="modal-go-inventory">&gt;&gt; Go to Inventory Page</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <!-- <footer style="position: absolute;">
+        <p>&copy; 2022 Emma's Small Engines</p>
+    </footer> -->
+    
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/order.js"></script>
+</body>
+
+</html>
+
